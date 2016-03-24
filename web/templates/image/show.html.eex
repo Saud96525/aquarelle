@@ -1,0 +1,25 @@
+<div itemscope itemtype="http://schema.org/Painting">
+
+<img src="<%= src @image %>" alt="<%= @image.title %>" itemprop="image" />
+
+<h2 itemprop="name"><%= @image.title %></h2>
+<%= if @image.description do %>
+    <%= formatted_description @image %>
+<% end %>
+<%= if @image.medium do %>
+    <b>medium:</b> <%= @image.medium %>
+<% end %>
+
+<span class="invisible" itemprop="creator" itemscope
+			itemtype="http://schema.org/Person">
+  <span itemprop="name">
+		Anders Pearson
+	</span>
+</span>
+
+<time class="invisible" datetime="<%= @image.created %>"
+      itemprop="datePublished"><%= @image.created %></time>
+
+</div>
+<%= link "Edit", to: image_path(@conn, :edit, @image) %>
+<%= link "Back", to: image_path(@conn, :index) %>

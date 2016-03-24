@@ -1,0 +1,51 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :title, "Title", class: "control-label" %>
+    <%= text_input f, :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :slug, "Slug", class: "control-label" %>
+    <%= text_input f, :slug, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :description, "Description", class: "control-label" %>
+    <%= text_input f, :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :created, "Created", class: "control-label" %>
+    <%= datetime_select f, :created, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :medium, "Medium", class: "control-label" %>
+    <%= text_input f, :medium, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :key, "Key", class: "control-label" %>
+    <%= text_input f, :key, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :extension, "Extension", class: "control-label" %>
+    <%= text_input f, :extension, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
