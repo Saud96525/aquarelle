@@ -1,18 +1,15 @@
-defmodule Aquarelle.Gallery do
+defmodule Aquarelle.GalleryImage do
   use Aquarelle.Web, :model
 
-  schema "galleries" do
-    field :title, :string
-    field :slug, :string
-    field :description, :string
+  schema "galleryimages" do
+    belongs_to :gallery, Aquarelle.Gallery
+    belongs_to :image, Aquarelle.Image
     field :ordinality, :integer
 
-    has_many :galleryimages, Aquarelle.GalleryImage
-    
     timestamps
   end
 
-  @required_fields ~w(title slug description ordinality)
+  @required_fields ~w(ordinality)
   @optional_fields ~w()
 
   @doc """
