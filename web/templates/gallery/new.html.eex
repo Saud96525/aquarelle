@@ -1,0 +1,6 @@
+<h2>New gallery</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: gallery_path(@conn, :create) %>
+
+<%= link "Back", to: gallery_path(@conn, :index) %>

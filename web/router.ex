@@ -17,6 +17,7 @@ defmodule Aquarelle.Router do
     pipe_through :browser # Use the default browser stack
 
 		resources "/images", ImageController
+    resources "/galleries", GalleryController
     get "/", PageController, :index
   end
 
