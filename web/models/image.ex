@@ -14,6 +14,7 @@ defmodule Aquarelle.Image do
     field :extension, :string, default: ".jpg"
 
     has_many :galleryimages, Aquarelle.GalleryImage
+    has_many :galleries, through: [:galleryimages, :gallery]
 
     timestamps
   end

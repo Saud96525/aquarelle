@@ -8,6 +8,7 @@ defmodule Aquarelle.Gallery do
     field :ordinality, :integer
 
     has_many :galleryimages, Aquarelle.GalleryImage
+    has_many :images, through: [:galleryimages, :image]
     
     timestamps
   end

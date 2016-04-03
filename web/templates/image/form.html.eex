@@ -41,8 +41,8 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :extension, "Extension", class: "control-label" %>
-    <%= text_input f, :extension, class: "form-control" %>
+      <%= label f, :extension, "Extension", class: "control-label" %>
+      <%= text_input f, :extension, class: "form-control" %>
   </div>
 
   <div class="form-group">

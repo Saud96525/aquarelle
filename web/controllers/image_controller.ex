@@ -3,6 +3,7 @@ defmodule Aquarelle.ImageController do
   use Aquarelle.Web, :controller
 
   alias Aquarelle.Image
+  alias Aquarelly.Gallery
 
   plug :scrub_params, "image" when action in [:create, :update]
 
